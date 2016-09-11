@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TvPage</title>
+    <link rel="stylesheet" href="css/TvPageStyle.css">
+    <link rel="stylesheet" href="common/commonHead.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+        $(document).ready(function () {
+            var head = $.ajax({url:"common/head.html",async:false});
+            $("#head").html(head.responseText);
+            var footer = $.ajax({url:"common/footer.html",async:false});
+            $("#footer").html(footer.responseText);
+//            $(".js-product-imag").click(function () {
+//                var goodsInfo = {
+//                    "img": $(".product-imag"),
+//                    "price":$(".price-display").lastElementChild.val(),
+//                };
+//                console.log("ok!");
+//                $("goodsInfo",JSON.stringify(goodsInfo),{expires:1,path:"/"});
+//                console.log($("goodsInfo"));
+//            });
+//            var goods = {
+//                "id":1,
+//                "name":"li",
+//                "age":20
+//            };
+//            $.cookie("carts",JSON.stringify(goods),{expires:7,path:"/"});
+////            console.log($.cookie("carts"));
+//            $(".product-imag").on("click",function () {
+//                console.log("hello!");
+//            });
+//            console.log($(".js-product-imag"));
+//            $("#0").bind("click",function (e) {
+//                e.preventDefault()
+////                alert("hao");
+//                alert($(this).children("img").attr("src"));
+//            });
+//            console.log($("#0").children("img").attr("src"));
+        });
+    </script>
+</head>
+<body>
+    <div id="head"></div>
+    <script>
+        var headHeigt = $(".header").height();
+        $(document).scroll(function () {
+            var x = $(document).scrollTop();
+            if(x > headHeigt){
+                $(".header-wrapper").slideDown(500);
+            } else{
+                $(".header-wrapper").css({display:"none"});
+            }
+        });
+    </script>
+    <div class="wrapper">
+        <section class="bodys">
+            <section class="center">
+                <div class="sponsored-container-top-wrapper">
+                    <div class="container-responsive">
+                        <div class="top-gpt">
+                            <div class="ads">
+                                <a href="">
+                                    <img src="ads/ads01.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-full">
+                    <div class="search-container-center-wrapper">
+                        <div class="search-container-center">
+                            <nav class="breadcrumb-container">
+                                <ul class="breadcrumb-list">
+                                    <li class="js-breadcrumb"><a href="" class="breadcrumb"><span>Electronics</span></a></li>
+                                    <li class="js-breadcrumb"><a href="" class="breadcrumb"><span>TV & Video</span></a></li>
+                                    <li class="js-breadcrumb"><a href="" class="breadcrumb"><hl class="breadcrumb"><span>All Tvs</span></hl></a></li>
+                                </ul>
+                            </nav>
+                            <div class="merchant-module">
+                                <a href=""><img src="ads/k2.jpg" alt="" style="height: 200px;"></a>
+                                <div class="linkBar">
+                                    <a href="" class="link"><span>39" & Smaller TVs</span></a>
+                                    <a href="" class="link"><span>40" - 49" TVs</span></a>
+                                    <a href="" class="link"><span>50" - 59" TVs</span></a>
+                                    <a href="" class="link"><span>60" to 69" TVs</span></a>
+                                    <a href="" class="link"><span>70" & Larger TVs</span></a>
+                                </div>
+                            </div>
+                            <div class="utility-bar-container">
+                                <div class="uility-bar-refiner ">
+                                    <div class="utility-sort left">
+                                        <span class="utility-bar-text">Refine</span>
+                                        <div class="flyout-align"></div>
+                                    </div>
+                                    <div class="utility-refiner"></div>
+                                    <div class="js-grid-view"></div>
+                                    <div class="utility-bar-sorter"></div>
+                                </div>
+                            </div>
+                            <div id="tile-container" class="tile-container">
+                                <ul class="tile-list">
+                                </ul>
+                                <br class="clearx">
+                            </div>
+                            <script>
+                                $.getJSON("js/shops.js",function (result) {
+                                    var TVs;
+                                    for(var i=0, num=result.shops.length; i<num; i++){
+                                        $(".tile-list").append("<li class=\"tile-grid-unit-wrapper\">"
+                                                +" <div class=\"js-tile tile-grid-unit\">"
+                                                +"<span class=\"flag\">Special Buy</span>"
+                                                +"<a href=\"#\" class=\"js-product-imag\" id=\""+result.shops[i].index+"\">"
+                                                +"<img src="+result.shops[i].img+" alt=\"\" class=\""+result.shops[i].index+"\" >"
+                                                +"</a>"
+                                                +"        <p class=\"sponsored-product-search\" style=\"display: none;\"></p>"
+                                                +"       <div class=\"tile-price\">"
+                                                +"        <div class=\"js-item-price\">"
+                                                +"        <span class=\"price-display\">"
+                                                +"        <sup style=\"font-size: 12px;\">$</sup>"+result.shops[i].price+""
+                                                +"        </span>"
+                                                +"        <span class=\"price-auxblock\">"
+                                                +"        <div class=\"price-aux\">"
+                                                +"        List price <span>"+result.shops[i]["price-aux"]+"</span>"
+                                                +"</div>"
+                                                +"</span>"
+                                                +"<div class=\"price-savingblock\">"
+                                                +"        <div class=\"price-savingblock\">"
+                                                +"        <div class=\"price-saving\">"+result.shops[i]["price-saving"]+"</div>"
+                                                +"</div>"
+                                                +"</div>"
+                                                +"</div>"
+                                                +"</div>"
+                                                +"<a href=\"\" class=\"js-product-tile\">"
+                                                +"        <h3 class=\"tile-heading\">"
+                                                +"        <div>"+result.shops[i]["tile-heading"]+"</div>"
+                                                +"</h3>"
+                                                +"</a>"
+                                                +"<div class=\"stars strs-small\">"
+
+                                                +"       </div>"
+                                                +"       <div class=\"tile-details module\">"
+                                                +"       <ul>"
+                                                +"       <li></li>"
+                                                +"       <li><b>Free</b> shipping</li>"
+                                                +"       <li><b>Free</b> store pickup</li>"
+                                                +"</ul>"
+                                                +"</div>"
+                                                +"</div></li>"
+                                        );
+
+                                    }
+                                    $(".js-product-imag").bind("click",function (e) {
+                                        e.preventDefault();
+                                        var inx = $(this).attr("id");
+                                        var datas = result.shops[inx];
+                                        $.cookie("data",JSON.stringify(datas),{expires:1,path:"/"});
+//                                        console.log($.cookie("data"));
+                                        location.href="shopDetails.html";
+                                    });
+                                });
+
+                            </script>
+                            <div class="paging"></div>
+                            <div id="ads"></div>
+                            <div class="custom-written-content js-custom-written-content-visible">
+                                <b>TVs</b>
+                                <p>The best TV for you will depend on your available space and how you intend to use the set. Walmart
+                                    carries a huge selection of TVs from top brands, so it's easy to find one that meets your needs.</p>
+                                <p>TVs come in a wide range of sizes, from less than 20 inches to more than 60. In addition to the space
+                                    where you'll put your TV, it's important to consider where you'll sit while you watch it. You'll want a
+                                    larger TV if you'll be viewing it from further away and a smaller one if you'll be sitting close up.</p>
+                                <p>If you're a TV or film buff, you'll probably get a lot of use out of a smart TV, which will allow you to
+                                    stream content from providers like <a href="http://www.vudu.com/">VUDU</a>, YouTube, Netflix, Hulu and
+                                    Vimeo. It will also be helpful to get a TV that offers lots of connectivity options for your Blu-ray
+                                    player, Apple TV and other devices. If you're a sports fan, look for a TV that provides a wide viewing
+                                    angle and offers a 1000:1 static contrast ratio for an ideal viewing experience. Gamers need TVs that
+                                    can keep up with fast-paced games and have HD displays that make games look their best. For gaming, look
+                                    for a TV with a response time under 6ms and a refresh rate of at least 120Hz as well as a
+                                    high-resolution display.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-container-sidebar">
+                        <div class="result-summary-container">Showing 40 of 1,707 results</div>
+                        <div class="sidebar-container">
+                            <div class="radio-facet">
+                                <a href="" class="expander-toggle">Shipping & Pickup</a>
+                                <div class="expander-content">
+                                    <div class="block-list">
+                                        <label class="radio">
+                                            <input type="radio">
+                                            <a href="" class="menus">Show all</a>
+                                        </label>
+                                        <label  class="radio">
+                                            <input type="radio">
+                                            <a href="" class="menus me-color">ShippingPass</a>
+                                        </label>
+                                        <label  class="radio">
+                                            <input type="radio">
+                                            <a href="" class="menus">Ship to Home</a>
+                                        </label>
+                                        <label  class="radio">
+                                            <input type="radio">
+                                            <a href="" class="menus">FREE Pickup</a>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio">
+                                            <a href="" class="menus">FREE Pickup Today</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Special Deliveries</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Screen Size</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Brand</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Television Type</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="expander price-facet">
+                                <a href="" class="expander-toggle">Condition</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Price</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="expander">
+                                <a href="" class="expander-toggle">Resolution</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Customer Rating</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Special Offers</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Retailer</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Internet Connection</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Save Big</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">Width</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="facet">
+                                <a href="" class="expander-toggle">System RAM</a>
+                                <div class="expander-content"></div>
+                            </div>
+                            <div class="browse-leftnav-relm">
+                                <a href="" class="expander-toggle">Popular in ALL TVs</a>
+                                <div class="expander-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+    <br class="clearx">
+    <div id="footer"></div>
+    <script>
+
+    </script>
+</body>
+</html>

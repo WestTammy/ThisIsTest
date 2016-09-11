@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Walmart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/edslider.css">
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/jquery.edslider.js"></script>
+
+
+</head>
+<body>
+    <!--商城头部-->
+    <div class="header">
+        <div class="margin">
+            <div class="header-primary">
+                <div class="container">
+                    <div class="menu"><!--js写入顶部菜单-->
+                        <ul class="menu-list">
+                            <li><a href=""><img src="img/256.png" alt=""><span>Gift Cards</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Registy</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Lists</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Weekly Ads</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Store Finder</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Track Finder</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Credit Card</span></a></li>
+                            <li><a href=""><img src="img/256.png" alt=""><span>Grocery Pickup</span></a></li>
+                        </ul>
+                        <br class="clearx">
+                    </div>
+
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="images/logo.PNG" alt="">
+                        </a>
+                    </div>
+                    <div class="header-search">
+                        <form action="" class="searchbar">
+                            <div class="arragen">
+                                <div class="searchbar-select">
+                                    <div class="flyout-bottom">
+                                        <button class="dropdown" type="button">All</button>
+                                        <div class="flyout-modal-select">
+                                            <script>
+                                                var flag = false;
+                                                $(".searchbar-select").click(function () {
+                                                    $(".flyout-modal-select").toggle();
+                                                    flag = true;
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <!--//通过js写入下拉菜单-->
+                                </div>
+                                <div class="searchbar-input">
+                                    <span class="typeahead">
+                                        <input type="text" class="search-input" value="Search">
+                                    </span>
+                                </div>
+                                <div class="arrage-fit">
+                                    <button class="search-submit">
+                                        <img class="wimicon" src="images/search01.png" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header-meta">
+                       <div class="header-HeaderPrimary-user">
+                            <div class="header-semibold">
+                                <div>
+                                    <a href="" class="header-link">Hello. Sign In</a>
+                                </div>
+                                <div class="flyout-bottom">
+                                    <button type="button" class="flyout-link-dropdown">My Account</button>
+                                    <div class="flyout-modal-list">
+                                        <ul class="flyout-list">
+                                            <li class="flyout-listItem">
+                                                <a href="Logins.html" class="header-globalAccount-link">Sign In</a>
+                                                <span class="header-instructional">View my account</span>
+                                            </li>
+                                            <li class="flyout-listItem">
+                                                <a href="creatAccount.html" class="header-globalAccount-link">Create an Account</a>
+                                                <span class="header-instructional">Get more out of Walmart.com</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <script>
+                                    $(".flyout-link-dropdown").mouseover(function () {
+                                        $(".flyout-modal-list").css({display:"block"});
+                                    });
+                                    $(".flyout-modal-list").mouseleave(function () {
+                                        $(".flyout-modal-list").css({display:"none"});
+                                    });
+                                </script>
+                            </div>
+                       </div>
+                        <div class="arrange-fit">
+                            <div class="header-cart">
+                                <a href="" class="display-cart">
+                                    <img src="img/empty-cart.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearx"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="margin">
+                <div class="flyout-modal">
+                    <ul class="global-lefhand-nav">
+                        <li class="nav-main-primary">
+                            <button class="btn-fake-lin" type="button">All Departments</button>
+
+                            <div class="nav-dropdown-container">
+                                <ul class="nav-dropdown">
+                                    <li class="js-flyout-toggle-row">
+                                        <a href="">4th of July Savings</a>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row js-row">
+                                        <button class="btn-fake" type="button">Electronics & Office</button>
+                                    </li>
+                                    <li class="js-flyout-toggle-row">
+                                        <a href="">See All Departments</a>
+                                    </li>
+                                </ul>
+                                <div class="nav-pull-left">
+                                    <div class="header-golbalLeftPanel panel-first">
+                                        <div class="header-linkGrounp">
+                                            <a class="header-nav-menu" href="">Shop Electronics</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">TV & Video</a>
+                                            <a href="TvPage.html" class="panel-link-small">TVs</a>
+                                            <a href="" class="panel-link-small">DVD & Blu-ray Players</a>
+                                            <a href="" class="panel-link-small">Home Audio & Theater</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Cell Phones</a>
+                                            <a href="" class="panel-link-small">No-Contract Phones</a>
+                                            <a href="" class="panel-link-small">Prepaid Minutes & Data</a>
+                                            <a href="" class="panel-link-small">Straight Talk</a>
+                                            <a href="" class="panel-link-small"></a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Home Automation</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu"> Werable Tech</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Cut the Cable</a>
+                                        </div>
+                                    </div>
+                                    <div class="header-golbalLeftPanel">
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">iPad & Tablets</a>
+                                            <a href="" class="panel-link-small">iPad</a>
+                                            <a href="" class="panel-link-small">Windows Tablets</a>
+                                            <a href="" class="panel-link-small">Accessories</a>
+                                            <a href="" class="panel-link-small">Android Tablets</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Computers</a>
+                                            <a href="" class="panel-link-small">Laptops</a>
+                                            <a href="" class="panel-link-small">Desktops</a>
+                                            <a href="" class="panel-link-small">Printers & Supplies</a>
+                                            <a href="" class="panel-link-small">Networking</a>
+                                            <a href="" class="panel-link-small">Software</a>
+                                            <a href="" class="panel-link-small">Monitors</a>
+                                            <a href="" class="panel-link-small">Accessories</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Auto Electronics</a>
+                                            <a href="" class="panel-link-small">GPS & Navigation</a>
+
+                                        </div>
+                                    </div>
+                                    <div class="header-golbalLeftPanel">
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Video Games</a>
+                                            <a href="" class="panel-link-small">Value bundles</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Cameras & Camcorders</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Portable Audio</a>
+                                            <a href="" class="panel-link-small">iPod & MP3 Players</a>
+                                            <a href="" class="panel-link-small">Headphones</a>
+                                            <a href="" class="panel-link-small">Speakers & Docks</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Office</a>
+                                            <a href="" class="panel-link-small">Furniture</a>
+                                            <a href="" class="panel-link-small">Office Electronics</a>
+                                            <a href="" class="panel-link-small">Office Supplies</a>
+                                            <a href="" class="panel-link-small">School Supplies</a>
+                                        </div>
+                                        <div class="header-linkGrounp">
+                                            <a href="" class="header-nav-menu">Tips & Advice</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="header-golbalLeftPanel imgs">
+                                        <img src="images/v1.png" alt="">
+                                    </div>
+                                </div>
+                                <br class="clearx">
+                            </div>
+                            <script>
+                                $(".btn-fake-lin").mouseover(function () {
+                                    $(".nav-dropdown-container").css({display:"block",});
+                                });
+                                $(".global-lefhand-nav").mouseleave(function () {
+                                    $(".nav-dropdown-container").css({display:"none"});
+                                });
+
+
+                                var select = $(".nav-dropdown").children();
+                                console.log(select.length);
+                                for(var i=1, num=select.length; i<num - 1; i++) {
+                                    select[i].onmouseover = function () {
+                                        this.firstElementChild.style.background="#fff";
+                                        $(".nav-dropdown-container").css({background:"#fff"});
+                                        $(".nav-pull-left").css({display:"block"});
+                                    }
+                                    select[i].onmouseout = function () {
+                                        this.firstElementChild.style.background = "#f2f8fd";
+                                        $(".nav-dropdown-container").css({background:""});
+                                        $(".nav-pull-left").mouseover(function () {
+                                            $(".nav-pull-left").css({display:"block"});
+                                        });
+                                    }
+                                }
+                            </script>
+                        </li>
+                        <li class="hide-content-l"></li>
+                    </ul>
+                </div>
+                <ul class="nav-main-list">
+                    <li class="nav-main-list-item"><a class="first-item" href="" title="Savings Showcase">Savings Showcase</a></li>
+                    <li class="nav-main-list-item"><a href="" title="My Local Store">My Local Store</a></li>
+                    <li class="nav-main-list-item"><a href="" title="Pick it up TODAY">Pick itp TODAY</a></li>
+                    <li class="nav-main-list-item"><a href="" title="Tips & Ideas">Tips & Ideas</a></li>
+                </ul>
+                <ul class="message-list">
+
+                </ul>
+                <div class="clearx"></div>
+            </div>
+        </div>
+        <div class="fixie-fixed">
+            <div class="header-wrapper">
+            </div>
+        </div>
+        <script>
+            var headHeigt = $(".header").height();
+//            console.log(headHeigt);
+            $(document).scroll(function () {
+                var x = $(document).scrollTop();
+//                console.log(x);
+                if(x > headHeigt){
+                    $(".header-wrapper").slideDown(500);
+                } else{
+                    $(".header-wrapper").css({display:"none"});
+                }
+            });
+
+        </script>
+    </div>
+    <div class="homepage">
+        <div class="homepage-top-zone">
+            <div class="zone">
+                <div class="container">
+                    <ul class="mySlideshow">
+                        <li class="first">
+                            <a href="#" target="_blank" class="animated fadeInLeft"></a>
+                        </li>
+                        <li class="second">
+                        </li>
+                        <li class="third">
+                        </li>
+                        <li class="fourth">
+                        </li>
+                        <li class="fifth">
+                        </li>
+                    </ul>
+                </div>
+                <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+                <script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+                <script src="js/jquery.edslider.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        //Call plugin
+                        $('.mySlideshow').edslider({
+                            width : '100%',
+                            height: 300
+                        });
+                    });
+                </script>
+            </div><!--通过js写入轮播图-->
+            <div class="zoneAd"></div><!--通过js写入广告-->
+        </div>
+        <div class="homepage-middle-zone">
+            <div class="js-product-image-zone">
+                <div class="slick-module">
+                    <div class="tempo-module-header">
+                        <h5 class="tempo-module-heading">Featured Products</h5>
+                    </div>
+                    <!--<div class="js-carousel-n-up">-->
+                    <!--</div>-->
+                </div>
+                <!--再次写入js图片滚动模块-->
+                <script type="text/javascript" src="src/jquery.silver_track.js" charset="utf-8"></script>
+                <script type="text/javascript" src="src/plugins/jquery.silver_track.navigator.js" charset="utf-8"></script>
+                <script type="text/javascript" src="src/plugins/jquery.silver_track.bullet_navigator.js" charset="utf-8"></script>
+                <script type="text/javascript" src="src/plugins/jquery.silver_track.responsive_hub_connector.js" charset="utf-8"></script>
+                <script type="text/javascript" src="js/script.js" charset="utf-8"></script>
+                <script type="text/javascript" src="js/example1.js" charset="utf-8"></script>
+                <div class="track example-1">
+                    <div class="inner">
+                        <div class="view-port">
+                            <div id="example-1" class="slider-container">
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="Tile-linkOver">
+                                        <img src="images/computer.jpg">
+                                        <div class="Tile-content">
+                                            <div class="Tile-priceConten">
+                                                <div class="Tile-block">
+                                                    <span class="Price"><span class="Price-sup"><sup>$</sup></span>1<span>,</span>139<span>.</span>00</span>
+                                                    <span class="Was">Was $1299.00</span>
+                                                </div>
+                                            </div><!--js写入物品单价-->
+                                            <a href="" class="Tile-heading">
+                                                <span class="">LEGO Disney Anna and...</span>
+                                            </a><!--js写入物品详情-->
+                                            <div class="stars">
+
+                                            </div>   <!--js写入评分插件-->
+                                            <div class="Tile-shippingPass"><!--js写入运输费用详情-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bullet-pagination"></div>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="prev disabled"></a>
+                        <a href="#" class="next disabled"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="js-product-image-slick">
+                <script type="text/javascript" src="src/jquery.silver_track.js" charset="utf-8"></script>
+                <script type="text/javascript" src="src/plugins/jquery.silver_track.navigator.js" charset="utf-8"></script>
+                <script type="text/javascript" src="src/plugins/jquery.silver_track.bullet_navigator.js" charset="utf-8"></script>
+                <script type="text/javascript" src="src/plugins/jquery.silver_track.responsive_hub_connector.js" charset="utf-8"></script>
+                <script type="text/javascript" src="js/script2.js" charset="utf-8"></script>
+                <script type="text/javascript" src="js/example2.js" charset="utf-8"></script>
+                <div class="track2 example-2">
+                    <div class="tempo-module-header">
+                        <h5 class="tempo-module-heading"></h5>
+                    </div>
+                    <div class="inner">
+                        <div class="view-port">
+                            <div id="example-2" class="slider-container">
+                                <div class="item">
+                                    <!--<div class="js-frist-tile">-->
+                                    <!--&lt;!&ndash;<a href="" class="Tile-linkOver"></a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<img src="images/computer.jpg" alt="">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="product-content">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<a href="" class="content-heading">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="js-product-title">Computer</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item">
+                                    <div class="js-frist-tile">
+                                        <a href="" class="Tile-linkOver"></a>
+                                        <img src="images/computer.jpg" alt="">
+                                        <div class="product-content">
+                                            <a href="" class="content-heading">
+                                                <span class="js-product-title">Computer</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bullet-pagination2"></div>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="prev disabled"></a>
+                        <a href="#" class="next disabled"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="js-product-image-zone">
+                <div class="slick-module">
+                    <div class="tempo-module-header">
+                        <h5 class="tempo-module-heading">Save big in every department</h5>
+                    </div>
+                    <div class="js-carousel-n-up">
+                    </div>
+                    <div class="list-container"><!--商城分类展示-->
+                        <ul class="Tile-list">
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href="" class="Tile-linkOver"></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Electronics</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Home</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/pgd.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Pation & Garden</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Mattresses</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Clothing & Jewelry</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Furniture</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href="" class="Tile-linkOver"></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Free Grocery Pickup</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Bikes</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Auto & Tires</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Back to College</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Back to School</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href="" class="Tile-linkOver"></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Teacher Wish List</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Home Improvement</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Outdoor Sports</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Exercise & Fitness</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Baby & Toddler</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Movies & TV</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href="" class="Tile-linkOver"></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Toys</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Food</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Video Games</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Pets</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Household Essentials</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Beauty & Grooming</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href="" class="Tile-linkOver"></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Photo</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/elec.png" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Savings Showcase</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Value Bundles</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Savings Catcher</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="featured-categories-title">
+                                <div class="Tile">
+                                    <a href=""></a>
+                                    <div class="Tile-img">
+                                        <img src="menuImgs/home.jpg" alt="">
+                                    </div>
+                                    <div class="Tile-conten">
+                                        <h4 class="js-title-heading">Gift Cards</h4>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="clearx"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage-bottom-zone"></div>
+    </div>
+    <div class="footer">
+        <div class="margin">
+            <div class="footerFirst">
+               <div class="pullLeft">
+                   <div class="emailCont"><p>Be the first to save!</p></div>
+                   <form action="" class="signUp">
+                       <input class="inpt" type="text" value="Email address">
+                       <button class="sub" type="submit" >Sign up</button>
+                   </form>
+                   <a href="##" class="priv">Privacy policy</a>
+               </div>
+               <div class="pullRight">
+                    <ul class="ico">
+                        <li><a href=""><img src="img/8.png" alt=""></a></li>
+                        <li><a href=""><img src="img/13.png" alt=""></a></li>
+                        <li><a href=""><img src="img/23.png" alt=""></a></li>
+                        <li><a href=""><img src="img/24.png" alt=""></a></li>
+                        <li><a href=""><img src="img/25.png" alt=""></a></li>
+                    </ul>
+               </div>
+               <div class="clearx"></div>
+           </div>
+            <div class="footerSecond">
+                <div class="footerContent">
+                    <div class="footer-links-column">
+                        <h3>Financial Services</h3>
+                        <ul class="block-list">
+                            <li><a href="#" title="Walmart MoneyCenter">Walmart MoneyCenter</a></li>
+                            <li><a href="#" title="Walmart Credit Card">Walmart Credit Card</a></li>
+                            <li><a href="#" title="Apply Now">Apply Now</a></li>
+                            <li><a href="#" title="Manage Card Account">Manage Card Account</a></li>
+                            <li><a href="#" title="Product Care Plans">Product Care Plans</a></li>
+                            <li><a href="#" title="Walmart Pay">Walmart Pay</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Get to Know Us</h3>
+                        <ul class="block-list">
+                            <li><a href="" title="About Walmart.com">About Walmart.com</a></li>
+                            <li><a href="" title="Corporate">Corporate</a></li>
+                            <li><a href="" title="Supplies">Supplies</a></li>
+                            <li><a href="" title="Marketplace">Marketplace</a></li>
+                            <li><a href="" title="Careers">Careers</a></li>
+                            <li><a href="" title="@Walmartlabs">@Walmartlabs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Walmart</h3>
+                        <ul class="block-list">
+                            <li><a href="" title="Terms of Use">Terms of Use</a></li>
+                            <li><a href="" title="About Our Ads">About Our Ads</a></li>
+                            <li><a href="" title="Affiliate Program">Affiliate Program</a></li>
+                            <li><a href="" title="CA Privacy Rights">CA Privacy Rights</a></li>
+                            <li><a href="" title="Privacy & Security">Privacy & Security</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Customer Service</h3>
+                        <ul class="block-list">
+                            <li><a href="" title="Returns Policy">Returns Policy</a></li>
+                            <li><a href="" title="Product Recalls">Product Recalls</a></li>
+                            <li><a href="" title="Int'l Customers">Int'l Customers</a></li>
+                            <li><a href="" title="Tax Exempt Program">Tax Exempt Program</a></li>
+                            <li><a href="" title="contact Us">Tax Exempt Program</a></li>
+                            <li><a href="" title="Feedback">Feedback</a></li>
+                            <li><a href="" title="Store Pickup">Store Pickup</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>In the Spotlight</h3>
+                        <ul class="block-list">
+                            <li><a href="" title="Baby">[+] Baby</a></li>
+                            <li><a href="" title="Electronics">[+] Electronics</a></li>
+                            <li><a href="" title="Fitness">[+] Fitness</a></li>
+                            <li><a href="" title="Keep Cool">[+] Keep Cool</a></li>
+                            <li><a href="" title="International Sites">[+] International Sites</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearx"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="footer-copyright-text">
+                    <span class="pull-left">
+                        <span  >&copy Walmart Stores, Inc.</span>
+                    </span>
+                    <span class="pull-right">
+                        <span >To ensure we're able to help you as best we can,please include your reference number:AK7TCTPY4K</span>
+                    </span>
+            <div class="clearx"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

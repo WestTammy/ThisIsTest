@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="common/commonHead.css">
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var head = $.ajax({url:"common/head.html",async:false});
+            $("#head").html(head.responseText);
+            var footer = $.ajax({url:"common/footer.html",async:false});
+            $("#footer").html(footer.responseText);
+            $("#focus .form-control").each(function () {
+                var thisVal = $(this).val();
+                // console.log(thisVal);
+                //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+                if (thisVal != "") {
+                    $(this).siblings("span").hide();
+                } else {
+                    $(this).siblings("span").show();
+                }
+                //聚焦型输入框验证
+                $(this).focus(function () {
+                    $(this).siblings("span").hide();
+                    $(this).siblings("div").show();
+                }).blur(function () {
+                    var val = $(this).val();
+                    $(this).siblings("div").hide();
+                    if (val != "") {
+                        $(this).siblings("span").hide();
+                    } else {
+                        $(this).siblings("span").show();
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="head"></div>
+<div class="login-wrapper-container" >
+    <div class="widget-spinner" >
+        <section class="SignUp clearfix" >
+            <h1 class="heading-a">Create your account</h1>
+            <form  class="option-form-control" id="focus">
+                <label class="form-label">
+                    <div class="validation-group">
+                        <span class="label-text visuallyhidden">First name</span>
+                        <input type="text" class="form-control"  name="username">
+                    </div>
+                    <div class="col-sm-5 messages"></div>
+                </label>
+                <label class="form-label">
+                    <div class="validation-group">
+                        <span class="label-text visuallyhidden">Last name</span>
+                        <input type="text" class="form-control" name="username">
+                    </div>
+                    <div class="col-sm-5 messages"></div>
+                </label>
+                <label class="form-label">
+                    <div class="validation-group">
+                            <span class="label-text visuallyhidden">Email</span>
+                            <input type="email" class="form-control"  name="email">
+                    </div>
+                    <div class="col-sm-5 messages"></div>
+                </label>
+                <div >
+                    <label class="form-label" >
+                        <div class="validation-group">
+                            <span class="label-text visuallyhidden" >Password</span>
+                            <input type="password" class="form-control"  name="password">
+                            <div class="hint">
+                                <span>Your Password must be between 6 and 12 characters.</span>
+                                <div class="lingxing">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 messages"></div>
+                    </label>
+                </div>
+                <div class="privacy-policy-signup-text">
+                        <span >By clicking Create Account, you acknowledge you have read and agreed to the</span>
+                        <a href=""> Terms of Use </a>
+                        <span> and </span>
+                        <a href="">PrivacyPolicy</a>
+                        <span>.</span>
+                </div>
+                <button type="submit" class="l-margin-top btn btn-block">Create Account</button>
+                <div class="option">
+                    <input type="checkbox"  id="checkbox-0"  checked="" value="true">
+                    <label for="checkbox-0" class="">
+                        <span>Email me about Rollbacks, special pricing, hot new items, gift ideas and more.</span>
+                    </label>
+                    <br class="clearx">
+                </div>
+                <div class="bottom-info-wrap pull-left">
+                    <p><span>Returning customer?</span>
+                        <span>&nbsp;</span>
+                        <button type="button" aria-disabled="false" class="btn-fake-link"><a href="Logins.html">Sign In</a></button>
+                    </p>
+                </div>
+                <div class="pull-right norton-wrapper">
+                    <table class="no-margin" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose Symantec SSL \ for secure e-commerce and confidential communications.">
+                        <tbody >
+                        <tr >
+                            <td >
+                                <a tabindex="-1" href="javascript:window.open(&#39;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.walmart.com&amp;lang=en&#39;, &#39;VRSN_Splash&#39;, &#39;location=yes,status=yes,resizable=yes,scrollbars=yes,width=560,height=500&#39;);void(0);" >
+                                    <img class="norton-icon" alt="Click to Verify - This site has chosen an SSL Certificate to improve Web site security" src="//ll-us-i5.wal.co/dfw/63fd9f59-c2e6/f3616add-6915-41b3-b774-bb06fd9587dc/v1/71bbb7c02c17900bb04da7ab02165c8b.png" name="seal" ></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="clearx"></div>
+            </form>
+        </section>
+    </div>
+</div>
+<!--<script src="js/jquery-1.8.0.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+<script src="js/validate.js"></script>
+<script>
+    (function() {
+        // These are the constraints used to validate the form
+        var constraints = {
+            email: {
+                // Email is required
+                presence: true,
+                // and must be an email (duh)
+                email: true
+            },
+            password: {
+                // Password is also required
+                presence: true,
+                // And must be at least 5 characters long
+                length: {
+                    minimum: 6,
+                    maximum:12
+                }
+            },
+            username: {
+                // You need to pick a username too
+                presence: true,
+                // And it must be between 3 and 20 characters long
+                length: {
+                    minimum: 1
+                }
+            }
+        };
+
+        // Hook up the form so we can prevent it from being posted
+        var form = document.querySelector("form.option-form-control");
+        form.addEventListener("submit", function(ev) {
+            ev.preventDefault();
+            handleFormSubmit(form);
+        });
+
+        // Hook up the inputs to validate on the fly
+        var inputs = document.querySelectorAll("input")
+//        console.log(inputs.length);
+        for (var i = 0; i < inputs.length-1; ++i) {
+            inputs.item(i).addEventListener("change", function(ev) {
+                var errors = validate(form, constraints) || {};
+//                console.log(this);
+                showErrorsForInput(this, errors[this.name])
+            });
+        }
+
+        function handleFormSubmit(form, input) {
+            // validate the form aainst the constraints
+            var errors = validate(form, constraints);
+            // then we update the form to reflect the results
+            showErrors(form, errors || {});
+            if (!errors) {
+                showSuccess();
+            }
+        }
+
+        // Updates the inputs with the validation errors
+        function showErrors(form, errors) {
+            // We loop through all the inputs and show the errors for that input
+            _.each(form.querySelectorAll("input[name]"), function(input) {
+                // Since the errors can be null if no errors were found we need to handle
+                // that
+                showErrorsForInput(input, errors && errors[input.name]);
+            });
+        }
+
+        // Shows the errors for a specific input
+        function showErrorsForInput(input, errors) {
+            // This is the root of the input
+            var formGroup = closestParent(input.parentNode, "form-label");
+            // Find where the error messages will be insert into
+            var messages=formGroup.querySelector(".messages");
+//            console.log(messages);
+            // First we remove any old messages and resets the classes
+            resetFormGroup(formGroup);
+            // If we have errors
+            if (errors) {
+                // we first mark the group has having errors
+                formGroup.classList.add("has-error");
+                // then we append all the errors
+                _.each(errors, function(error) {
+                    addError(messages, error);
+                });
+            } else {
+                // otherwise we simply mark it as success
+                formGroup.classList.add("has-success");
+            }
+        }
+
+        // Recusively finds the closest parent that has the specified class
+        function closestParent(child, className) {
+            if (!child || child == document) {
+                return null;
+            }
+            if (child.classList.contains(className)) {
+                return child;
+            } else {
+                return closestParent(child.parentNode, className);
+            }
+        }
+
+        function resetFormGroup(formGroup) {
+            // Remove the success and error classes
+            formGroup.classList.remove("has-error");
+            formGroup.classList.remove("has-success");
+            // and remove any old messages
+            _.each(formGroup.querySelectorAll(".help-block.error"), function(el) {
+                el.parentNode.removeChild(el);
+            });
+        }
+
+        // Adds the specified error with the following markup
+        // <p class="help-block error">[message]</p>
+        function addError(messages, error) {
+            var block = document.createElement("p");
+            block.classList.add("help-block");
+            block.classList.add("error");
+            block.innerText = error;
+            console.log(block);
+            messages.appendChild(block);
+        }
+
+        function showSuccess() {
+            // We made it \:D/
+            alert("Success!");
+        }
+    })();
+</script>
+<div id="footer"></div>
+</body>
+</html>

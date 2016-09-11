@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Cart</title>
+    <link rel="stylesheet" href="css/viewCart.css">
+    <link rel="stylesheet" href="common/commonHead.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var head = $.ajax({url: "common/head.html", async: false});
+            $("#head").html(head.responseText);
+            var footer = $.ajax({url: "common/footer.html", async: false});
+            $("#footer").html(footer.responseText);
+            $("#about").click(function () {
+                console.log($(".about-container").offset().top)
+                $("body").animate({scrollTop: $(".about-container").offset().top - 90}, 1000);
+                return false;
+            });
+            $("#reviews").click(function () {
+                console.log($(".review-snippet").offset().top)
+                $("body").animate({scrollTop: $(".review-snippet").offset().top - 90}, 1000);
+                return false;
+            });
+            $("#recommend").click(function () {
+                $("body").animate({scrollTop: $(".irs-snippet-border").offset().top - 90}, 1000);
+                return false;
+            });
+            $("#policies").click(function () {
+                $("body").animate({scrollTop: $(".policies-product-section").offset().top - 90}, 1000);
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="head"></div>
+<section class="body">
+    <section class="center">
+        <div class="cart-spa">
+            <div class="spa-layout">
+                <div class="responsive-container">
+                    <div class="cart-lists-wrapper">
+                        <div class="cart-cc-banner">
+                            <div class="wmcc-banner">
+                                <div class="banner-background"></div>
+                                <div class="banner-content">
+                                    <img src="ads/k2.jpg" alt="" style="display: block; width: 66%; height: 154px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-header">
+
+                        </div>
+                        <h3 class="cart-list-title">
+                            Your cart: <span></span>
+                        </h3>
+                        <div class="js-zipcode-form">
+                        </div>
+                        <div class="cart-list-active">
+                            <script>
+                                var datas = JSON.parse($.cookie("carts"));
+                                var structs;
+                                var all=0;
+                                var shu=0;
+                                for(var x in datas){
+                                    if(datas[x] !=null){
+//                                        console.log(datas[x]);
+                                        all += parseFloat(datas[x].money)*parseFloat(datas[x].num);
+//                                    console.log(all);
+                                        shu += datas[x].num;
+//                                    console.log(datas[x]);
+                                        structs += "  <div class=\"cart-item-row\">"
+                                                +"<div class=\"grid-cart\">"
+                                                +"        <div class=\"flags\">"
+                                                +"        <div class=\"flag-special-buy\">Special Buy</div></div>"
+                                                +"<div class=\"grid-cart-col\">"
+                                                +"        <div class=\"cart-item-image\">"
+                                                +"        <a href=\"\">"
+                                                +"        <img src=\""+datas[x].imgs+"\" alt=\"\"></a></div></div>"
+                                                +"        <div class=\"grid-cart-content\">"
+                                                +"        <div class=\"cart-item-name\">"
+                                                +"        <a href=\"\" class=\"cart-btn-product\">"
+                                                +"        <span>"+datas[x].info+"</span></a></div>"
+                                                +"<div class=\"block-list\">"
+                                                +"        <span >Sold by:Walmart.com</span></div></div>"
+                                                +"<div class=\"grid-cart-money\">"
+                                                +"        <div class=\"arrange\">"
+                                                +"        <div class=\"arrange-fill\">"
+                                                +"        <div class=\"no-wrap\">Qty: "+datas[x].num+"</div></div></div>"
+                                                +"<div class=\"arrange-fit\">"
+                                                +"        <div class=\"cart-price-ite\">"
+                                                +"        <span class=\"Price-flair\"><sup>$</sup> "+(Number(datas[x].money)*Number(datas[x].num)+ Number(datas[x].num)*31.4).toFixed(2)+"</span>"
+                                                +"        <span class=\"cart-previous\">"+datas[x]["list-price"]+"</span>"
+                                                +"<span class=\"cart-saved\">"+datas[x].saving+"</span></div></div></div>"
+                                                +"<br class=\"clearx\"></div>"
+                                                +"        <div class=\"grid-button\">"
+                                                +"        <div class=\"xs-margin-ends\">"
+                                                +"        <button class=\"btn-fake-link saved-later\">Save for later</button>"
+                                                +"        <button class=\"btn-fake-link btn-remove\" id=\""+datas[x].id+"\">Remove</button></div></div></div>";
+                                    }
+//
+                                }
+                                $(".cart-list-active").html(structs);
+//                                console.log( $(".cart-list-title").children("span"));
+                                $(".cart-list-title").children("span").text(shu +" items");
+                                $(".btn-remove").on("click",function () {
+                                    var numb = $(this).attr("id");
+                                    var newCart={};
+                                    console.log(datas);
+                                    for(var s in datas){
+                                        if(s == numb){
+                                           continue;
+                                        }else {
+                                            newCart[s] = datas[s];
+                                        }
+                                    }
+                                    $.removeCookie("carts");
+                                    $.cookie("carts",JSON.stringify(newCart),{expires:1,path:"/"});
+//                                    datas[numb] = null;
+//                                    $.cookie("carts",JSON.stringify(datas),{expires:1,path:"/"});
+                                    console.log($.cookie("carts"));
+                                    var data = JSON.parse($.cookie("carts"));
+                                    var y;
+                                    var newAll;
+                                    var newNum=0;
+                                    for( y in data){
+                                        if(data[y] != null){
+                                            newAll += parseFloat(data[y].money)*parseFloat(data[y].num);
+                                            newNum += data[y].num;
+                                        }
+                                    }
+
+                                    $(".price-mk").text((Number(newAll) + (31.4*newNum)).toFixed(2));
+                                    $(".cart-list-title").children("span").text(newNum +" items");
+                                    $(".cart-list-active").css({display:"none"});
+//                                    console.log(newAll);
+                                });
+
+//                                console.log($.cookie("carts"));
+
+                            </script>
+                            <!--<div class="cart-item-row">-->
+                                <!--<div class="grid-gutters">-->
+                                    <!--<div class="flags">-->
+                                        <!--<div class="flag-rollback">Rollback</div>-->
+                                        <!--<div class="flag-special">Special Buy</div>-->
+                                    <!--</div>-->
+                                    <!--<br class="clearx">-->
+                                    <!--<div class="grid-col u-size-3">-->
+                                        <!--<div class="cart-item-image">-->
+                                            <!--<a href="" id="CartItemInfo">-->
+                                                <!--<img src="shopping/0001.jpeg" alt=""-->
+                                                     <!--style="display: block; width: 80px;height: 80px;">-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-col u-size-4">-->
+                                        <!--<div class="cart-item-name">-->
+                                            <!--<a href="" id="CartInfos">-->
+                                                <!--<span>RCA  42" LED42C45RQ LED 1080P 60HZ (3.4" ULTRA-SLIM) HDTV</span>-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="block-list">-->
+                                            <!--<span class="u-textGrey"><b>Sold by:</b></span>-->
+                                            <!--<span class="u-textGrey">Walmart.com</span>-->
+                                        <!--</div>-->
+                                        <!--<div class="block-list">-->
+                                            <!--<span class="u-textGrey uts"><b>&gt; ShippingPass</b></span>-->
+
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-col u-size-5">-->
+                                        <!--<div class="arrange-shrink">-->
+                                            <!--<div class="arrange-fill">-->
+                                                <!--<div class="no-wrap hide-content-max-m cart-item-quantity js-item-quantity">-->
+                                                    <!--<span>Qty</span>-->
+                                                    <!--<select class="js-selector js-cart-item-quantity js-quantity-dropdown chooser-rounded visuallyhidden" >-->
+                                                        <!--<option>1</option>-->
+                                                        <!--<option selected="selected">2</option>-->
+                                                        <!--<option>3</option>-->
+                                                        <!--<option>4</option>-->
+                                                        <!--<option>5</option>-->
+                                                    <!--</select>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="arrange fit"></div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-br"></div>-->
+                                    <!--<div class="grid-offset"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="cart-item-row">-->
+                                <!--<div class="grid-cart">-->
+                                    <!--<div class="flags">-->
+                                        <!--<div class="flag-special-buy">Special Buy</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-cart-col">-->
+                                        <!--<div class="cart-item-image">-->
+                                            <!--<a href="">-->
+                                                <!--<img src="shopping/0001.jpeg" alt="">-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-cart-content">-->
+                                        <!--<div class="cart-item-name">-->
+                                            <!--<a href="" class="cart-btn-product">-->
+                                                <!--<span>SCEP TRE X322BV-M 32" LED Class 720P HDTV with ultra slim metal brush bezel, 60Hz</span>-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="block-list">-->
+                                            <!--<span >Sold by:Walmart.com</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-cart-money">-->
+                                        <!--<div class="arrange">-->
+                                            <!--<div class="arrange-fill">-->
+                                                <!--<div class="no-wrap">Qty: 10</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="arrange-fit">-->
+                                            <!--<div class="cart-price-ite">-->
+                                                    <!--<span class="Price-flair">-->
+                                                        <!--<sup>$</sup>-->
+                                                        <!--129.99-->
+                                                    <!--</span>-->
+                                                    <!--<span class="cart-previous">-->
+                                                        <!--List $199.99-->
+                                                    <!--</span>-->
+                                                <!--<span class="cart-saved">Save $20.00 each</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<br class="clearx">-->
+                                <!--</div>-->
+                                <!--<div class="grid-button">-->
+                                    <!--<div class="xs-margin-ends">-->
+                                        <!--<button class="btn-fake-link saved-later">Save for later</button>-->
+                                        <!--<button class="btn-fake-link btn-remove">Remove</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="cart-item-row">-->
+                                <!--<div class="grid-cart">-->
+                                    <!--<div class="flags">-->
+                                        <!--<div class="flag-special-buy">Special Buy</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-cart-col">-->
+                                        <!--<div class="cart-item-image">-->
+                                            <!--<a href="">-->
+                                                <!--<img src="shopping/0001.jpeg" alt="">-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-cart-content">-->
+                                        <!--<div class="cart-item-name">-->
+                                            <!--<a href="" class="cart-btn-product">-->
+                                                <!--<span>SCEP TRE X322BV-M 32" LED Class 720P HDTV with ultra slim metal brush bezel, 60Hz</span>-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="block-list">-->
+                                            <!--<span >Sold by:Walmart.com</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="grid-cart-money">-->
+                                        <!--<div class="arrange">-->
+                                            <!--<div class="arrange-fill">-->
+                                                <!--<div class="no-wrap">Qty: 10</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="arrange-fit">-->
+                                            <!--<div class="cart-price-ite">-->
+                                                    <!--<span class="Price-flair">-->
+                                                        <!--<sup>$</sup>-->
+                                                        <!--129.99-->
+                                                    <!--</span>-->
+                                                    <!--<span class="cart-previous">-->
+                                                        <!--List $199.99-->
+                                                    <!--</span>-->
+                                                <!--<span class="cart-saved">Save $20.00 each</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<br class="clearx">-->
+                                <!--</div>-->
+                                <!--<div class="grid-button">-->
+                                    <!--<div class="xs-margin-ends">-->
+                                        <!--<button class="btn-fake-link saved-later">Save for later</button>-->
+                                        <!--<button class="btn-fake-link btn-remove">Remove</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="shippingPass"></div>
+                        <div id="fixeds" class="persistent-order">
+                            <div class="pos-padding-sides">
+                                <div class="js-subtotal" style="height: 19px; padding-top:12px;"></div>
+                                <div class="pos-shipping-methods" style="height: 19px; padding-top:12px;"></div>
+                                <div class="js-est-tax" style="height: 19px; padding-top:12px;"></div>
+                                <div class="js-tax-flyout" style="height: 19px; padding-top:12px;"></div>
+                                <hr class="separator">
+                                <div class="arrange-bottom">
+                                    <p class="font-semibold">Est. total</p>
+                                    <p class="arrange-sum">
+                                    <span class="price-flair">
+                                        <sup>$</sup>
+                                        <span class="price-mk"></span>
+
+                                    </span>
+                                    </p>
+                                </div>
+                                <script>
+                                    $(".price-mk").text((Number(all) + (31.4*shu)).toFixed(2));
+                                </script>
+                            </div>
+                            <div class="pos-padding-controls">
+                                <div class="s-margin-ends">
+                                    <a href="" class="btn-primary">Check Out</a>
+                                </div>
+                            </div>
+                            <div class="pos-padding-offers">
+                                <div class="pos-upsell">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-list-saved"></div>
+                    </div>
+                    <br class="clearx">
+                </div>
+                <div class="cart-recommendation-module"></div>
+            </div>
+        </div>
+        <!--<div class="fixed-totals">-->
+        </div>
+        <script>
+            var fixedHeigt = $("#fixeds").position().top;
+//            console.log(fixedHeigt);
+            $(document).scroll(function () {
+                var y = $(document).scrollTop();
+                if(y > (fixedHeigt )){
+                    $(".fixed-totals").html("<div class=\"persistent-order\">"
+                    +"<div class=\"pos-padding-sides\">"
+                    +"        <div class=\"js-subtotal\" style=\"height: 19px; padding-top:12px;\"></div>"
+                    +"        <div class=\"pos-shipping-methods\" style=\"height: 19px; padding-top:12px;\"></div>"
+                    +"        <div class=\"js-est-tax\" style=\"height: 19px; padding-top:12px;\"></div>"
+                    +"        <div class=\"js-tax-flyout\" style=\"height: 19px; padding-top:12px;\"></div>"
+                    +"        <hr class=\"separator\">"
+                    +"        <div class=\"arrange-bottom\">"
+                    +"    <p class=\"font-semibold\">Est. total</p>"
+                    +"        <p class=\"arrange-sum\">"
+                    +"        <span class=\"price-flair\"> <sup>$</sup>"
+                    +"        <span class=\"price-mk\"></span> </span> </p> </div> </div>"
+                    +"        <div class=\"pos-padding-controls\">"
+                    +"        <div class=\"s-margin-ends\">"
+                    +"        <a href=\"\" class=\"btn-primary\">Check Out</a></div></div>"
+                    +"<div class=\"pos-padding-offers\">"
+                    +"        <div class=\"pos-upsell\"></div></div></div>").slideDown(500);
+                } else{
+                    $(".fixed-totals").css({display:"none"});
+                }
+            });
+        </script>
+    </section>
+</section>
+<div id="footer"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

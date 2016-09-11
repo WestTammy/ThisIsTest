@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/loginAccount.css">
+    <link rel="stylesheet" href="common/commonHead.css">
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var head = $.ajax({url:"common/head.html",async:false});
+            $("#head").html(head.responseText);
+            var footer = $.ajax({url:"common/footer.html",async:false});
+            $("#footer").html(footer.responseText);
+            $("#focus .form-control").each(function () {
+                var thisVal = $(this).val();
+               // console.log(thisVal);
+                //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+                if (thisVal != "") {
+                    $(this).siblings("span").hide();
+                } else {
+                    $(this).siblings("span").show();
+                }
+                //聚焦型输入框验证
+                $(this).focus(function () {
+                    $(this).siblings("span").hide();
+                }).blur(function () {
+                    var val = $(this).val();
+                    if (val != "") {
+                        $(this).siblings("span").hide();
+                    } else {
+                        $(this).siblings("span").show();
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="head"></div>
+<div class="login-wrapper-container" data-reactid=".0.1">
+    <div class="widget-spinner" data-reactid=".0.1.0">
+        <noscript data-reactid=".0.1.0.0"></noscript>
+        <section class="SignIn clearfix" >
+            <h1 class="heading-a">Sign in to your account</h1>
+            <form method="post" id="focus">
+                <label class="form-label">
+                    <div class="validation-group" >
+                        <span class="label-text visuallyhidden">Email address</span>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                </label>
+                <label class="form-label">
+                    <div class="validation-group" >
+                        <span class="label-text visuallyhidden">Password</span>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                </label>
+                <button type="button"  class="forgot-password-btn-link btn-fake-link">Forgot password?</button>
+                <button type="submit"  class="btn btn-block">Sign In</button>
+                <div class="bottom-info-wrap">
+                    <div class="norton-wrapper pull-right">
+                        <table class="no-margin">
+                            <tbody>
+                            <tr>
+                                <td><a href="javascript:window.open(&#39;https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.walmart.com&amp;lang=en&#39;, &#39;VRSN_Splash&#39;, &#39;location=yes,status=yes,resizable=yes,scrollbars=yes,width=560,height=500&#39;);void(0);">
+                                    <img class="norton-icon" src="//ll-us-i5.wal.co/dfw/63fd9f59-c2e6/f3616add-6915-41b3-b774-bb06fd9587dc/v1/71bbb7c02c17900bb04da7ab02165c8b.png" name="seal"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        <span>Don't have an account?</span>
+                        <span>&nbsp;</span>
+                        <button type="button" class="btn-fake-link"><a href="creatAccount.html">Create one now</a></button>
+                    </p>
+                    <div class="privacy-policy-container" >
+                        <span>See our</span>
+                        <a target="_blank" href="http://corporate.walmart.com/privacy-security/walmart-privacy-policy">privacy policy</a>
+                    </div>
+                </div>
+                <br class="clearx">
+            </form>
+            <div class="captcha">
+                <input type="hidden" id="sensor-data">
+            </div>
+        </section>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+</html>
